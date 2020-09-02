@@ -52,14 +52,9 @@ const Dashboard: React.FC = () => {
           const formattedValue = formatValue(Number(transaction.value));
 
           const transactionFormatted: Transaction = {
-            id: transaction.id,
-            title: transaction.title,
-            value: transaction.value,
+            ...transaction,
             formattedValue,
             formattedDate,
-            type: transaction.type,
-            category: { title: transaction.category.title },
-            created_at: transaction.created_at,
           };
 
           return transactionFormatted;
